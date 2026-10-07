@@ -1,9 +1,10 @@
-# Salesforce Marketing Cloud Portfolio
+# Evolve With Char M
+## Salesforce Marketing Cloud Engineering Portfolio
 
 ## Charmaine McDougald
 **Salesforce Marketing Cloud Engineer & Marketing Automation Leader**
 
-AMPScript | SQL | APIs | Journey Builder | Personalization | CRM | Customer Experience | 2x Salesforce Certified
+AMPscript | SSJS | SQL | APIs | Journey Builder | Personalization | CRM | Customer Experience | 2x Salesforce Certified
 
 [LinkedIn](https://www.linkedin.com/in/ccirksey-mcdougald/) | charmaine.mcdougald@gmail.com
 
@@ -51,7 +52,16 @@ Each project is designed to show not only the code or configuration concept, but
 
 ---
 
-# Portfolio Projects
+# Featured Code Demos
+
+| Project | Skills demonstrated | Start here |
+| --- | --- | --- |
+| Localized member email | AMPscript, conditional content, safe output, fallbacks | [Personalization guide](ampscript/README.md) |
+| Paginated audience audit | SSJS, WSProxy, SOAP retrieval, data quality, failure handling | [Audit guide](ssjs/README.md) |
+
+These newly authored examples use fictional data. They are portfolio demonstrations, pending validation in a Marketing Cloud Engagement business unit. They are not reproductions of previous employer code.
+
+# Portfolio Roadmap
 
 ## 1. Audience Segmentation & Data Hygiene
 **Status:** In Development
@@ -84,7 +94,7 @@ A fictional company needs a repeatable process for identifying qualified promoti
 ---
 
 ## 2. Dynamic Email Personalization Framework
-**Status:** Planned
+**Status:** Initial AMPscript demo added; expanded framework planned
 
 A modular email framework demonstrating personalization, conditional content, fallback logic, and localization within Salesforce Marketing Cloud.
 

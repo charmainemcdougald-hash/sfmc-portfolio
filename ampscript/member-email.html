@@ -1,0 +1,41 @@
+%%[
+/* Content Builder HTML content block. Fictional demo; see README for setup. */
+VAR @firstName, @language, @tier, @greeting, @heading, @body
+SET @firstName = Trim(AttributeValue("FirstName"))
+SET @language = Lowercase(Trim(AttributeValue("Language")))
+SET @tier = Lowercase(Trim(AttributeValue("MemberTier")))
+
+IF @language == "es" THEN
+  SET @greeting = "Hola"
+  SET @heading = "Tu próximo capítulo comienza aquí"
+  SET @body = "Explora recursos para dar tu próximo paso."
+  IF @tier == "gold" THEN
+    SET @body = "Como miembro Gold, tienes acceso a nuestra colección destacada."
+  ENDIF
+ELSE
+  SET @greeting = "Hello"
+  SET @heading = "Your next chapter starts here"
+  SET @body = "Explore resources to help you take your next step."
+  IF @tier == "gold" THEN
+    SET @body = "As a Gold member, you have access to our featured collection."
+  ENDIF
+ENDIF
+
+/* Escape data before inserting into an HTML text node; ampersand first. */
+SET @firstName = Replace(@firstName, "&", "&amp;")
+SET @firstName = Replace(@firstName, "<", "&lt;")
+SET @firstName = Replace(@firstName, ">", "&gt;")
+SET @firstName = Replace(@firstName, '"', "&quot;")
+SET @firstName = Replace(@firstName, "'", "&#39;")
+]%%
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <td style="padding:24px;background:#f8f5ed;color:#173c2b;font-family:Arial,sans-serif;">
+      <p style="font-size:14px;">EVOLVE WITH CHAR M</p>
+      <p>%%=v(@greeting)=%%%%[ IF NOT Empty(@firstName) THEN ]%%, %%=v(@firstName)=%%%%[ ENDIF ]%%!</p>
+      <h1 style="font-size:24px;">%%=v(@heading)=%%</h1>
+      <p style="font-size:16px;line-height:1.5;">%%=v(@body)=%%</p>
+      <a href="https://evolvewithchar.com" style="color:#173c2b;">Evolve With Char M</a>
+    </td>
+  </tr>
+</table>

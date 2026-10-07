@@ -1,0 +1,5 @@
+SubscriberKey,EmailAddress,FirstName,Language,MemberTier,ConsentStatus
+demo-001,maya@example.com,Maya,en,gold,opted-in
+demo-002,luis@example.com,Luis,es,standard,opted-in
+demo-003,invalid-email,,fr,unknown,opted-out
+demo-004,sample@example.com,A<B & C,en,standard,unknown
